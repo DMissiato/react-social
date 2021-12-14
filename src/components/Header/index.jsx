@@ -4,7 +4,7 @@ import styles from './Header.module.scss';
 const Header = (props) => {
 
     const name = props.name || 'AppName';
-    const links = props.links || [{ link: '/home', label: 'Home' }];
+    const links = props.links || [{ link: './home', label: 'Home' }];
 
     return (
         <header className={styles.header}>
