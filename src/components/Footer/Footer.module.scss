@@ -1,0 +1,13 @@
+
+@import './../../libs/variables.scss';
+
+.footer {
+    padding: 20px $sidePadding 50px;
+
+    p
+    {
+        text-align: center;
+        background-color: $blackColor;
+        color: $whiteColor;
+    }
+}
