@@ -1,12 +1,13 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import AddTax from "./components/AddTax";
+
+import Home from './pages/Home';
 
 function App() {
 
   const appName = 'Feisbrut';
   const nav = [
-      { link: './home', label: "Home" },
+      { link: './', label: "Home" },
       { link: './friends', label: "Friends" },
       { link: './messages', label: "Messages" }
   ];
@@ -14,7 +15,7 @@ function App() {
   return (
     <div>
       <Header name={appName} links={nav} />
-      <AddTax value={100} tax={22} />
+      <Home />
       <Footer />
     </div>
   );
