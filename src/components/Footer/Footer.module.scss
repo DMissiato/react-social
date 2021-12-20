@@ -2,12 +2,14 @@
 @import './../../libs/variables.scss';
 
 .footer {
-    padding: 20px $sidePadding 50px;
+    padding: 40px $sidePadding;
+    margin-top: 50px;
+    background-color: $blackColor;
 
     p
     {
         text-align: center;
-        background-color: $blackColor;
+        
         color: $whiteColor;
     }
 }

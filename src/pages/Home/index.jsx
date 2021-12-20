@@ -19,7 +19,6 @@ const Home = () => {
 
   // GETTER -> const friendPreview = [];
   // SETTER -> friendPreview = [...]
-  
 
   // Esegui del codice quando il componente è inizializzato (montato in pagina)
   // componentDidMount() --> simile a "DOMContentLoaded" ma solo per il componente
