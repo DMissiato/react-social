@@ -1,6 +1,6 @@
 
 import styles from "./MessagePreview.module.scss";
-import { formatDateAgo } from "../../libs/http";
+import { formatDateAgo } from "../../libs/utils";
 
 const MessagePreview = (props) => {
   const data = props.data || {
@@ -22,4 +22,4 @@ const MessagePreview = (props) => {
   );
 };
 
-export { MessagePreview };
+export default MessagePreview;

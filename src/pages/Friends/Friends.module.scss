@@ -1,0 +1,19 @@
+
+@import './../../libs/variables.scss';
+
+.Friends 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 60px 20px;
+  
+    > * {
+      width: 200px;
+      margin: 20px;
+      border: 1px solid $mainColor;
+      /*border-radius: 1rem;*/
+      padding: 5px;
+      padding-right: 15px;
+    }
+  }

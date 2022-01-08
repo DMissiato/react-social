@@ -1,17 +1,21 @@
 
 import { Routes, Route } from 'react-router-dom';
+import { useReducer } from 'react';
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import CreatePost from './components/CreatePost';
 
 import Home from './pages/Home';
-import { useReducer } from 'react';
+import Friends from './pages/Friends';
+import Messages from './pages/Messages';
 
 
 const INIT_STATE = {
   name: 'Feisbrut',
   nav: [
       { link: './', label: "Home" },
+      { link: './new-post', label: "Create Post" },
       { link: './friends', label: "Friends" },
       { link: './messages', label: "Messages" }
   ],
@@ -44,8 +48,9 @@ function App()
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/friends" element={<h3>Friends</h3>} />
-        <Route path="/messages" element={<h3>Messages</h3>} />
+        <Route path="/new-post" element={<CreatePost />} />
+        <Route path="/friends" element={<Friends />} />
+        <Route path="/messages" element={<Messages />} />
       </Routes>
 
       <Footer />
