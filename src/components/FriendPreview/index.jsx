@@ -15,4 +15,4 @@ const FriendPreview = (props) => {
   );
 };
 
-export { FriendPreview };
+export default FriendPreview;

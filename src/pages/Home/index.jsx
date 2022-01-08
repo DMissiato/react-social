@@ -1,8 +1,8 @@
 
 import { useState, useEffect } from "react";
-import { FriendPreview } from "../../components/FriendPreview";
-import { MessagePreview } from "../../components/MessagePreview";
-import { Post } from "../../components/Post";
+import FriendPreview from "../../components/FriendPreview";
+import MessagePreview from "../../components/MessagePreview";
+import Post from "../../components/Post";
 import { http } from "./../../libs/http";
 import styles from "./Home.module.scss";
 
@@ -17,11 +17,7 @@ const Home = () => {
   const [allPosts, setAllPosts] = useState(posts);
   const [messagesPreview, setMessagesPreview] = useState(messages);
 
-  // GETTER -> const friendPreview = [];
-  // SETTER -> friendPreview = [...]
-
-  // Esegui del codice quando il componente è inizializzato (montato in pagina)
-  // componentDidMount() --> simile a "DOMContentLoaded" ma solo per il componente
+  
   useEffect(() => {
 
     http("/friends?_limit=4").then((data) => setFriendsPreview(data));
@@ -45,7 +41,7 @@ const Home = () => {
           ))}
         </aside>
         <main>
-          {allPosts.map((post, index) => (
+          {allPosts.reverse().map((post, index) => (
             <Post key={index} data={post} />
           ))}
         </main>
