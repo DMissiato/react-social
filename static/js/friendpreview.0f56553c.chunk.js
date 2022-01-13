@@ -1,0 +1,2 @@
+(this["webpackJsonpreact-social"]=this["webpackJsonpreact-social"]||[]).push([[1],{24:function(e,t,n){"use strict";n.r(t);var r=n(25),a=n.n(r),i=n(1);t.default=function(e){var t=e.data||{name:"Friend",photo:"https://randomuser.me/api/portraits/women/59.jpg"};return Object(i.jsxs)("div",{className:a.a.friend,children:[Object(i.jsx)("img",{src:t.photo,alt:t.name}),Object(i.jsx)("p",{children:t.name})]})}},25:function(e,t,n){e.exports={friend:"FriendPreview_friend__3Gjby"}}}]);
+//# sourceMappingURL=friendpreview.0f56553c.chunk.js.map
