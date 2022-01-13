@@ -11,6 +11,12 @@ const formatDateAgo = (data) =>
     });
 }
 
+const greetings = (name = 'User') =>
+{
+    return `Hello dear ${name}`;
+}
+
 export {
-    formatDateAgo
+    formatDateAgo,
+    greetings
 };

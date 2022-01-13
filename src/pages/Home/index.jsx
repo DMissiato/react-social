@@ -1,10 +1,12 @@
 
-import { useState, useEffect } from "react";
-import FriendPreview from "../../components/FriendPreview";
-import MessagePreview from "../../components/MessagePreview";
-import Post from "../../components/Post";
+import { useState, useEffect, Suspense, lazy } from "react";
 import { http } from "./../../libs/http";
 import styles from "./Home.module.scss";
+
+const FriendPreview = lazy(() => import(/* webpackChunkName: "friendpreview" */ '../../components/FriendPreview'));
+const MessagePreview = lazy(() => import(/* webpackChunkName: "messagepreview" */ '../../components/MessagePreview'));
+const Post = lazy(() => import(/* webpackChunkName: "post" */ '../../components/Post'));
+
 
 const friends = [];
 
@@ -35,21 +37,29 @@ const Home = () => {
     <section className={styles.home}>
       <h3>Bevenuto utente</h3>
       <div className={styles.grid}>
-        <aside>
-          {friendsPreview.map((friend, index) => (
-            <FriendPreview key={index} data={friend} />
-          ))}
-        </aside>
-        <main>
-          {allPosts.reverse().map((post, index) => (
-            <Post key={index} data={post} />
-          ))}
-        </main>
-        <aside>
-          {messagesPreview.map((message, index) => (
-            <MessagePreview key={index} data={message} />
-          ))}
-        </aside>
+        <Suspense fallback={<div>Loading...</div>}>
+          <aside>
+            {friendsPreview.map((friend, index) => (
+              
+                <FriendPreview key={index} data={friend} />
+              
+            ))}
+          </aside>
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <main>
+            {allPosts.reverse().map((post, index) => (
+                <Post key={index} data={post} />
+            ))}
+          </main>
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <aside>
+            {messagesPreview.map((message, index) => (
+                <MessagePreview key={index} data={message} />
+                ))}
+          </aside>
+        </Suspense>
       </div>
     </section>
   );

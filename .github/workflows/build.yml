@@ -25,6 +25,7 @@ jobs:
 
     # codice custom eseguito
     - run: npm ci
+    - run: npm test
     - run: npm run build
     
     # Deploy actions
