@@ -1,7 +1,7 @@
 {
   "name": "react-social",
   "version": "0.1.0",
-  "homepage": "https://dmissiato.github.io/react-social",
+  "homepage": "https://dmissiato.github.io",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
