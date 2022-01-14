@@ -16,7 +16,12 @@ const greetings = (name = 'User') =>
     return `Hello dear ${name}`;
 }
 
+const doFetch = () => fetch('https://jsonplaceholder.typicode.com/todos/1').then((response) => response.json());
+
+
+
 export {
     formatDateAgo,
-    greetings
+    greetings,
+    doFetch
 };
