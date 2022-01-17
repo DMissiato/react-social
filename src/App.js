@@ -6,10 +6,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CreatePost from './components/CreatePost';
 
-/* import Home from './pages/Home';
-import Friends from './pages/Friends';
-import Messages from './pages/Messages'; */
-
 const Home = lazy(() => import(/* webpackChunkName: "home" */ './pages/Home'));
 const Friends = lazy(() => import(/* webpackChunkName: "friends" */ './pages/Friends'));
 const Messages = lazy(() => import(/* webpackChunkName: "messages" */ './pages/Messages'));
@@ -18,13 +14,13 @@ const Messages = lazy(() => import(/* webpackChunkName: "messages" */ './pages/M
 const INIT_STATE = {
   name: 'Feisbrut',
   nav: [
-      { link: './', label: "Home" },
-      { link: './new-post', label: "Create Post" },
-      { link: './friends', label: "Friends" },
-      { link: './messages', label: "Messages" }
+      { link: './react-social/', label: "Home" },
+      { link: './react-social/new-post', label: "Create Post" },
+      { link: './react-social/friends', label: "Friends" },
+      { link: './react-social/messages', label: "Messages" }
   ],
   friendsPreview: []
-}
+};
 
 const reducer = (state, action) =>
 {
@@ -52,7 +48,7 @@ function App()
 
       <Routes>
         <Route 
-          path="/" 
+          path="/react-social/" 
           element={
             <Suspense fallback={<div>Loading...</div>}>
               <Home />
@@ -60,7 +56,7 @@ function App()
           } 
         />
         <Route 
-          path="/new-post" 
+          path="/react-social/new-post" 
           element={
             <Suspense fallback={<div>Loading...</div>}>
               <CreatePost />
@@ -68,7 +64,7 @@ function App()
           } 
         />
         <Route 
-          path="/friends" 
+          path="/react-social/friends" 
           element={
             <Suspense fallback={<div>Loading...</div>}>
               <Friends />
@@ -76,7 +72,7 @@ function App()
           } 
         />
         <Route 
-          path="/messages" 
+          path="/react-social/messages" 
           element={
             <Suspense fallback={<div>Loading...</div>}>
               <Messages />
